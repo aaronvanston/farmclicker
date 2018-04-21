@@ -5,9 +5,9 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import reducer from '~/reducers';
-import './styles/index.global.css';
+import App from '~/components/App/App';
 
-const App = () => <div>Hello World</div>
+import './styles/index.global.css';
 
 /* eslint-disable no-underscore-dangle */
 const store = createStore(

@@ -33,7 +33,7 @@ const productsQuantity = (state = initialState.quantity, action) => {
 };
 
 const products = (state = initialState, action) => ({
-  products: productsList(state.products, action),
+  list: productsList(state.products, action),
   quantity: productsQuantity(state.quantity, action),
 });
 

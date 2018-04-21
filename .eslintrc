@@ -3,5 +3,13 @@
   "parser": "babel-eslint",
   "settings": {
     "import/resolver": "babel-plugin-root-import"
+  },
+  "env": {
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": 0,
   }
 }

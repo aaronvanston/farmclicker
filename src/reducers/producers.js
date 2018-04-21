@@ -33,7 +33,7 @@ const producersQuantity = (state = initialState.quantity, action) => {
 };
 
 const producers = (state = initialState, action) => ({
-  producers: producersList(state.producers, action),
+  list: producersList(state.producers, action),
   quantity: producersQuantity(state.quantity, action),
 });
 
