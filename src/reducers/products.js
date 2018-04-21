@@ -26,6 +26,11 @@ const productsQuantity = (state = initialState.quantity, action) => {
         ...state,
         [action.name]: (state[action.name] || 0) + 1,
       };
+    case actionTypes.SELL_PRODUCT:
+      return {
+        ...state,
+        ...(state[action.name]) && { [action.name]: (state[action.name]) - 1 },
+      };
 
     default:
       return state;
