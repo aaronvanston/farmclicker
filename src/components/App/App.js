@@ -1,20 +1,25 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const App = ({ products, producers, inventory }) => (
+import { addProducer, addProduct } from '~/actions';
+import * as constants from '~/constants';
+
+const App = ({ products, producers, inventory, handleAddProducer, handleAddProduct }) => (
   <div>
     <div>
       Products:
+      <button onClick={() => handleAddProduct(constants.products.EGG)}>Add Egg</button>
       <pre>{JSON.stringify(products, null, 2)}</pre>
     </div>
 
     <div>
       Products:
+      <button onClick={() => handleAddProducer(constants.producers.CHICKEN)}>Add Chicken</button>
       <pre>{JSON.stringify(producers, null, 2)}</pre>
     </div>
 
     <div>
-      Products:
+      Inventory:
       <pre>{JSON.stringify(inventory, null, 2)}</pre>
     </div>
   </div>
@@ -26,4 +31,9 @@ const mapStateToProps = state => ({
   inventory: state.inventory,
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  handleAddProducer: (name) => { dispatch(addProducer(name)); },
+  handleAddProduct: (name) => { dispatch(addProduct(name)); },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

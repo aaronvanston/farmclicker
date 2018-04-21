@@ -6,7 +6,7 @@ const producersData = [
     buyPrice: 10000,
     multiplier: 4,
     produces: [
-      { [products.EGGS]: { rate: 0.1 } },
+      { [products.EGG]: { rate: 0.1 } },
     ],
   },
 ];

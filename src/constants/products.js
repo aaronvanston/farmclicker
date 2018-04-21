@@ -1,5 +1,5 @@
 const products = {
-  EGGS: 'EGGS',
+  EGG: 'EGG',
 };
 
 export default products;

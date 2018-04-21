@@ -1,11 +1,11 @@
 import { actionTypes } from '~/constants';
 
 export const initialState = {
-  products: [],
+  list: [],
   quantity: {},
 };
 
-const productsList = (state = initialState.products, action) => {
+const productsList = (state = initialState.list, action) => {
   const index = state.indexOf(action.name);
   switch (action.type) {
     case actionTypes.ADD_PRODUCT:
@@ -33,7 +33,7 @@ const productsQuantity = (state = initialState.quantity, action) => {
 };
 
 const products = (state = initialState, action) => ({
-  list: productsList(state.products, action),
+  list: productsList(state.list, action),
   quantity: productsQuantity(state.quantity, action),
 });
 

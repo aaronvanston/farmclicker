@@ -1,11 +1,11 @@
 import { actionTypes } from '~/constants';
 
 export const initialState = {
-  producers: [],
+  list: [],
   quantity: {},
 };
 
-const producersList = (state = initialState.producers, action) => {
+const producersList = (state = initialState.list, action) => {
   const index = state.indexOf(action.name);
   switch (action.type) {
     case actionTypes.ADD_PRODUCER:
@@ -33,7 +33,7 @@ const producersQuantity = (state = initialState.quantity, action) => {
 };
 
 const producers = (state = initialState, action) => ({
-  list: producersList(state.producers, action),
+  list: producersList(state.list, action),
   quantity: producersQuantity(state.quantity, action),
 });
 
