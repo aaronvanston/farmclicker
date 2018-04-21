@@ -1,4 +1,4 @@
-import { producers, products } from '~/constants/';
+import { producers, products } from '~/constants';
 
 const producersData = [
   {
@@ -8,7 +8,7 @@ const producersData = [
     produces: [
       { [products.EGGS]: { rate: 0.1 } },
     ],
-  }
+  },
 ];
 
 export default producersData;
