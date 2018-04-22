@@ -11,9 +11,10 @@ const App = ({
     <div>
       Products:
       <button onClick={() => handleAddProduct(constants.products.EGG)}>Add Egg</button>
+      <button onClick={() => handleAddProduct(constants.products.EGG, 0.5)}>Add Egg 0.5</button>
       <button
         onClick={() => handleSellProduct(constants.products.EGG)}
-        disabled={!(products.quantity[constants.products.EGG])}
+        disabled={!(products.quantity[constants.products.EGG] >= 1)}
       >
         Sell Egg
       </button>
@@ -21,7 +22,7 @@ const App = ({
     </div>
 
     <div>
-      Products:
+      Producer:
       <button onClick={() => handleAddProducer(constants.producers.CHICKEN)}>Add Chicken</button>
       <pre>{JSON.stringify(producers, null, 2)}</pre>
     </div>
@@ -41,7 +42,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleAddProducer: (name) => { dispatch(addProducer(name)); },
-  handleAddProduct: (name) => { dispatch(addProduct(name)); },
+  handleAddProduct: (name, amount) => { dispatch(addProduct(name, amount)); },
   handleSellProduct: (name) => { dispatch(sellProduct(name)); },
 });
 

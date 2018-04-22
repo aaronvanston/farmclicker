@@ -126,3 +126,9 @@ const products = [
     sellPrice: 1000, // in cents
   }
 ]
+
+
+// Tick rate 1sec
+// Each tick do:
+  // "Produce" products
+  // "Sell" products 

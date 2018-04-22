@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 
 import reducer from '~/reducers';
 import App from '~/components/App/App';
+import GameBoard from '~/components/GameBoard/GameBoard';
 
 import './styles/index.global.css';
 
@@ -21,7 +22,9 @@ const rootEl = document.getElementById('root');
 ReactDOM.render(
   <AppContainer>
     <Provider store={store}>
-      <App />
+      <GameBoard>
+        <App />
+      </GameBoard>
     </Provider>
   </AppContainer>,
   rootEl,

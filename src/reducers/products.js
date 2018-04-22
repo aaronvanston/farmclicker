@@ -24,7 +24,7 @@ const productsQuantity = (state = initialState.quantity, action) => {
     case actionTypes.ADD_PRODUCT:
       return {
         ...state,
-        [action.name]: (state[action.name] || 0) + 1,
+        [action.name]: (state[action.name] || 0) + action.amount,
       };
     case actionTypes.SELL_PRODUCT:
       return {

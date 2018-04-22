@@ -1,4 +1,6 @@
-export default config = {
-  tickRate: 60,
+const config = {
+  tickRate: 1000, // 1 Second
 };
+
+export default config;
 
