@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
+import { batchActions } from 'redux-batched-actions';
 
 import config from '~/config';
-import { produceProducts, addProduct } from '~/actions';
+import { addProduct } from '~/actions';
 import { producersCatalogue } from '~/catalogue';
 
 class GameBoard extends Component {
@@ -25,7 +26,7 @@ class GameBoard extends Component {
 
   updateGameBoard() {
     console.log('tick');
-    const { producers, handleProduceProducts, handleAddProduct } = this.props;
+    const { producers, handleAddProducts } = this.props;
 
     const produced = [];
 
@@ -36,18 +37,14 @@ class GameBoard extends Component {
         item.produces.forEach((producing) => {
           produced.push({
             name: producing.product,
-            qtyToAdd: producerQuantity * producing.rate,
+            amount: producerQuantity * producing.rate,
           });
         });
       }
     });
 
     if (produced.length >= 1) {
-      // TODO refactor to dispatch with array rather than individually.
-      // Maybe use https://github.com/manaflair/redux-batch
-      // https://github.com/tshelburne/redux-batched-actions
-      // handleProduceProducts(produced);
-      produced.forEach(produce => handleAddProduct(produce.name, produce.qtyToAdd));
+      handleAddProducts(produced);
     }
   }
 
@@ -57,8 +54,10 @@ class GameBoard extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  handleProduceProducts: (produced) => { dispatch(produceProducts(produced)); },
-  handleAddProduct: (name, amount) => { dispatch(addProduct(name, amount)); },
+  handleAddProducts: (products) => {
+    dispatch(batchActions(products.map(prod =>
+      addProduct(prod.name, prod.amount))));
+  },
 });
 
 

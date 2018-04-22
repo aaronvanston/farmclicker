@@ -13,9 +13,6 @@ const productsList = (state = initialState.list, action) => {
       }
       return [...state, action.name];
 
-    case actionTypes.PRODUCE_PRODUCTS:
-      return state;
-
     default:
       return state;
   }
@@ -34,9 +31,6 @@ const productsQuantity = (state = initialState.quantity, action) => {
         ...state,
         ...(state[action.name]) && { [action.name]: (state[action.name]) - 1 },
       };
-  
-    case actionTypes.PRODUCE_PRODUCTS:
-      return state;
 
     default:
       return state;
