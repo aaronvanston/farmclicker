@@ -24,6 +24,7 @@ const App = ({
     <div>
       Producer:
       <button onClick={() => handleAddProducer(constants.producers.CHICKEN)}>Add Chicken</button>
+      <button onClick={() => handleAddProducer(constants.producers.COW)}>Add Cow</button>
       <pre>{JSON.stringify(producers, null, 2)}</pre>
     </div>
 

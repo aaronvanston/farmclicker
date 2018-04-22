@@ -6,13 +6,15 @@ export const initialState = {
 };
 
 const productsList = (state = initialState.list, action) => {
-  const index = state.indexOf(action.name);
   switch (action.type) {
     case actionTypes.ADD_PRODUCT:
-      if (index !== -1) {
+      if (state.indexOf(action.name) !== -1) {
         return state;
       }
       return [...state, action.name];
+
+    case actionTypes.PRODUCE_PRODUCTS:
+      return state;
 
     default:
       return state;
@@ -26,11 +28,15 @@ const productsQuantity = (state = initialState.quantity, action) => {
         ...state,
         [action.name]: (state[action.name] || 0) + action.amount,
       };
+
     case actionTypes.SELL_PRODUCT:
       return {
         ...state,
         ...(state[action.name]) && { [action.name]: (state[action.name]) - 1 },
       };
+  
+    case actionTypes.PRODUCE_PRODUCTS:
+      return state;
 
     default:
       return state;

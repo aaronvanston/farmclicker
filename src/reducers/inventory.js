@@ -1,7 +1,7 @@
 import find from 'lodash/find';
 
 import { actionTypes } from '~/constants';
-import { products } from '~/data';
+import { productsCatalogue } from '~/catalogue';
 
 const initialState = {
   totalMoney: 0,
@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
     case actionTypes.SELL_PRODUCT:
       return {
         ...state,
-        totalMoney: state.totalMoney + getProductValue(products, action.name),
+        totalMoney: state.totalMoney + getProductValue(productsCatalogue, action.name),
       };
 
     default:
