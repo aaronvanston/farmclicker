@@ -2,7 +2,7 @@ import { products } from '~/constants';
 
 const producersCatalogue = [
   {
-    name: products.EGG,
+    name: products.EGGS,
     sellPrice: 100,
   }, {
     name: products.MILK,

@@ -4,19 +4,31 @@ import { connect } from 'react-redux';
 import { addProducer, addProduct, sellProduct } from '~/actions';
 import * as constants from '~/constants';
 
+import Header from '~/components/Header/Header';
+import ProductCard from '~/components/ProductCard/ProductCard';
+import ProductGrid from '~/components/ProductGrid/ProductGrid';
+
 const App = ({
   products, producers, inventory, handleAddProducer, handleAddProduct, handleSellProduct,
 }) => (
   <div>
+    <Header total={inventory.totalMoney} />
+    <ProductGrid>
+      <ProductCard name="Eggs" quantity={1} />
+      <ProductCard name="Eggs" quantity={1} />
+      <ProductCard name="Eggs" quantity={1} />
+    </ProductGrid>
+
+
     <div>
       Products:
-      <button onClick={() => handleAddProduct(constants.products.EGG)}>Add Egg</button>
-      <button onClick={() => handleAddProduct(constants.products.EGG, 0.5)}>Add Egg 0.5</button>
+      <button onClick={() => handleAddProduct(constants.products.EGGS)}>Add Eggs</button>
+      <button onClick={() => handleAddProduct(constants.products.EGGS, 0.5)}>Add Egg 0.5</button>
       <button
-        onClick={() => handleSellProduct(constants.products.EGG)}
-        disabled={!(products.quantity[constants.products.EGG] >= 1)}
+        onClick={() => handleSellProduct(constants.products.EGGS)}
+        disabled={!(products.quantity[constants.products.EGGS] >= 1)}
       >
-        Sell Egg
+        Sell Eggs
       </button>
       <pre>{JSON.stringify(products, null, 2)}</pre>
     </div>

@@ -1,5 +1,5 @@
 const products = {
-  EGG: 'EGG',
+  EGGS: 'EGGS',
   MILK: 'MILK',
 };
 

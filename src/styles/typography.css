@@ -1,0 +1,50 @@
+:root {
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--base-font-family);
+  font-size: var(--base-spacing-unit);
+  font-weight: var(--base-font-weight);
+  line-height: var(--base-line-height);
+  color: black;
+  letter-spacing: var(--base-letter-spacing);
+}
+
+body {
+  font-size: var(--base-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--bold-font-weight);
+}
+
+h1 {
+  margin: 0.75rem 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.0125rem;
+
+  @media (--md) {
+    font-size: 1.75rem;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+
+  @media (--md) {
+    font-size: 1.125rem;
+  }
+}
+
+h3 {
+  font-size: 0.9375rem;
+}
+
+strong,
+b {
+  font-weight: var(--bold-font-weight);
+}

@@ -1,0 +1,9 @@
+.card {
+  min-height: 12rem;
+  min-width: 10rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  background-color: white;
+  border-bottom: 2px solid #e5e5e5;
+  border-right: 2px solid #e5e5e5;
+}

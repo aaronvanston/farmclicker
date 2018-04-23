@@ -7,7 +7,7 @@ const producersCatalogue = [
     multiplier: 4,
     produces: [
       {
-        product: products.EGG,
+        product: products.EGGS,
         rate: 0.1,
       },
     ],
