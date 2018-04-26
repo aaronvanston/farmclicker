@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   min-height: 10rem;
-  border-bottom: 3px solid var(--border-colour);
+  /* border-bottom: 3px solid var(--border-colour); */
 }
 
 .main {

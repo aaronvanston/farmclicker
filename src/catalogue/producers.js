@@ -17,6 +17,16 @@ const producersCatalogue = [
     multiplier: 4,
     produces: [
       {
+        product: products.EGGS,
+        rate: 1,
+      },
+    ],
+  }, {
+    name: producers.COW,
+    buyPrice: 10000,
+    multiplier: 4,
+    produces: [
+      {
         product: products.MILK,
         rate: 0.2,
       },

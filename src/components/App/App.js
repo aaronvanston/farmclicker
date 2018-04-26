@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+
 import { addProducer, addProduct, sellProduct } from '~/actions';
 import * as constants from '~/constants';
 
@@ -8,6 +9,7 @@ import Header from '~/components/Header/Header';
 import ProductCard from '~/components/ProductCard/ProductCard';
 import ProductGrid from '~/components/ProductGrid/ProductGrid';
 import TotalMoney from '~/components/TotalMoney/TotalMoney';
+import Shop from '~/components/Shop/Shop';
 
 import styles from './App.css';
 
@@ -40,15 +42,11 @@ const App = ({
         <button onClick={() => handleAddProducer(constants.producers.COW)}>Add Cow</button>
         <pre>{JSON.stringify(producers, null, 2)}</pre>
       </div>
-      <div>
-        Inventory:
-        <pre>{JSON.stringify(inventory, null, 2)}</pre>
-      </div>
     </main>
 
     <aside className={styles.aside}>
       <TotalMoney />
-      hello
+      <Shop />
     </aside>
   </div>
 );
