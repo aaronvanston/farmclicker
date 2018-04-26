@@ -21,4 +21,6 @@
   --z-index-modal-backdrop: 30;
   --z-index-sticky: 20;
   --z-index-overlay: 10;
+
+  --border-colour: #e5e5e5;
 }

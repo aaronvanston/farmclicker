@@ -1,9 +1,5 @@
 @import "variables";
 
-:root {
-  --border-colour: #e5e5e5;
-}
-
 .card {
   min-height: 14rem;
   width: 100%;
@@ -33,11 +29,21 @@
     background-color: rgba(0,0,0,0.05);
     cursor: pointer;
   }
+
+  &:active {
+    background-color: rgba(0,0,0,0.1);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: #9a9a9a 0 2px;
+  }
 }
 
 .name {
   font-size: 1.5rem;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 .quantity {
@@ -56,13 +62,20 @@
   background: none;
   border: 0;
   border-top: 1px solid var(--border-colour);
+  cursor: pointer;
 
   &:first-of-type {
     border-right: 1px solid var(--border-colour);
   }
 
-  &:hover {
+  &:disabled {
+    cursor: not-allowed;
     background-color: rgba(0,0,0,0.05);
+    text-decoration: line-through;
+  }
+
+  &:hover {
+    background-color: rgba(0,0,0,0.075);
   }
 
   &:active {

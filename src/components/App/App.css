@@ -1,0 +1,28 @@
+@import "variables";
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1;
+}
+
+.aside {
+  max-width: 30%;
+  flex-basis: 30%;
+  width: 100%;
+  background-color: #fff;
+  border-left: 3px solid var(--border-colour);
+  position: relative;
+
+  /* &:before {
+    content: '';
+    position: absolute;
+    left: -3px;
+    background-color: white;
+    width: 3px;
+    height: 61px;
+  } */
+}

@@ -7,43 +7,49 @@ import * as constants from '~/constants';
 import Header from '~/components/Header/Header';
 import ProductCard from '~/components/ProductCard/ProductCard';
 import ProductGrid from '~/components/ProductGrid/ProductGrid';
+import TotalMoney from '~/components/TotalMoney/TotalMoney';
+
+import styles from './App.css';
 
 const App = ({
   products, producers, inventory, handleAddProducer, handleAddProduct, handleSellProduct,
 }) => (
-  <div>
-    <Header total={inventory.totalMoney} />
-    <ProductGrid>
-      <ProductCard name="Eggs" quantity={1} />
-      <ProductCard name="Eggs" quantity={1} />
-      <ProductCard name="Eggs" quantity={1} />
-    </ProductGrid>
+  <div className={styles.wrapper}>
+    <main className={styles.main}>
+      <Header total={inventory.totalMoney} />
+      <ProductGrid>
+        {products.list.map(product => (
+          <ProductCard name={product} quantity={products.quantity[product]} />
+        ))}
+      </ProductGrid>
 
+      <div>
+        Products:
+        <button onClick={() => handleAddProduct(constants.products.EGGS)}>Add Eggs</button>
+        <button onClick={() => handleAddProduct(constants.products.EGGS, 0.5)}>Add Egg 0.5</button>
+        <button
+          onClick={() => handleSellProduct(constants.products.EGGS)}
+          disabled={!(products.quantity[constants.products.EGGS] >= 1)}
+        >
+          Sell Eggs
+        </button>
+      </div>
+      <div>
+        Producer:
+        <button onClick={() => handleAddProducer(constants.producers.CHICKEN)}>Add Chicken</button>
+        <button onClick={() => handleAddProducer(constants.producers.COW)}>Add Cow</button>
+        <pre>{JSON.stringify(producers, null, 2)}</pre>
+      </div>
+      <div>
+        Inventory:
+        <pre>{JSON.stringify(inventory, null, 2)}</pre>
+      </div>
+    </main>
 
-    <div>
-      Products:
-      <button onClick={() => handleAddProduct(constants.products.EGGS)}>Add Eggs</button>
-      <button onClick={() => handleAddProduct(constants.products.EGGS, 0.5)}>Add Egg 0.5</button>
-      <button
-        onClick={() => handleSellProduct(constants.products.EGGS)}
-        disabled={!(products.quantity[constants.products.EGGS] >= 1)}
-      >
-        Sell Eggs
-      </button>
-      <pre>{JSON.stringify(products, null, 2)}</pre>
-    </div>
-
-    <div>
-      Producer:
-      <button onClick={() => handleAddProducer(constants.producers.CHICKEN)}>Add Chicken</button>
-      <button onClick={() => handleAddProducer(constants.producers.COW)}>Add Cow</button>
-      <pre>{JSON.stringify(producers, null, 2)}</pre>
-    </div>
-
-    <div>
-      Inventory:
-      <pre>{JSON.stringify(inventory, null, 2)}</pre>
-    </div>
+    <aside className={styles.aside}>
+      <TotalMoney />
+      hello
+    </aside>
   </div>
 );
 
