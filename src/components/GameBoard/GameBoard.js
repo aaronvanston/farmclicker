@@ -28,20 +28,14 @@ class GameBoard extends Component {
     console.log('tick');
     const { producers, handleAddProducts } = this.props;
 
-    const produced = [];
-
-    producersCatalogue.forEach((item) => {
-      const producerQuantity = producers.quantity[item.name];
-
-      if (producerQuantity >= 1) {
-        item.produces.forEach((producing) => {
-          produced.push({
-            name: producing.product,
-            amount: producerQuantity * producing.rate,
-          });
-        });
+    const produced = producersCatalogue.filter(item => (
+      (producers.quantity[item.name] >= 1)
+    )).map(item => (
+      {
+        name: item.produces.name,
+        amount: item.produces.rate * producers.quantity[item.name],
       }
-    });
+    ));
 
     if (produced.length >= 1) {
       handleAddProducts(produced);

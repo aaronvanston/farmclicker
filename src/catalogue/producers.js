@@ -5,32 +5,26 @@ const producersCatalogue = [
     name: producers.CHICKEN,
     buyPrice: 10000,
     multiplier: 4,
-    produces: [
-      {
-        product: products.EGGS,
-        rate: 0.1,
-      },
-    ],
+    produces: {
+      name: products.EGGS,
+      rate: 0.1,
+    },
   }, {
     name: producers.COW,
     buyPrice: 10000,
     multiplier: 4,
-    produces: [
-      {
-        product: products.EGGS,
-        rate: 1,
-      },
-    ],
+    produces: {
+      name: products.EGGS,
+      rate: 1,
+    },
   }, {
     name: producers.COW,
     buyPrice: 10000,
     multiplier: 4,
-    produces: [
-      {
-        product: products.MILK,
-        rate: 0.2,
-      },
-    ],
+    produces: {
+      name: products.MILK,
+      rate: 0.2,
+    },
   },
 ];
 

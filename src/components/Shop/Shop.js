@@ -1,15 +1,20 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import find from 'lodash/find';
 
 import ShopList from '~/components/ShopList/ShopList';
 import producersCatalogue from '~/catalogue/producers';
 
 import './Shop.css';
 
+// const getProducerList = productType =>
+//   producersCatalogue.filter(producer =>
+//     producer.produces.some(produce =>
+//       produce.product === productType));
+
 const getProducerList = productType =>
   producersCatalogue.filter(producer =>
-    producer.produces.some(produce =>
-      produce.product === productType));
+    producer.produces.name === productType);
 
 console.log(getProducerList('EGGS'));
 
@@ -22,10 +27,10 @@ const Shop = () => (
     </TabList>
 
     <TabPanel>
-      <ShopList handlePurchase={i => console.log(i)} items={getProducerList('EGGS')} />
+      <ShopList handleClick={i => console.log(i)} items={getProducerList('EGGS')} />
     </TabPanel>
     <TabPanel>
-      <ShopList handlePurchase={i => console.log(i)} items={getProducerList('EGGS')} />
+      <ShopList handleClick={i => console.log(i)} items={getProducerList('EGGS')} />
     </TabPanel>
   </Tabs>
 );
