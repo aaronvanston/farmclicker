@@ -16,8 +16,6 @@ const getProducerList = productType =>
   producersCatalogue.filter(producer =>
     producer.produces.name === productType);
 
-console.log(getProducerList('EGGS'));
-
 
 const Shop = () => (
   <Tabs>

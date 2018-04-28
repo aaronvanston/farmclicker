@@ -31,4 +31,4 @@ const mapDispatchToProps = dispatch => ({
   handleSell: (name) => { dispatch(sellProduct(name)); },
 });
 
-export default connect(() => {}, mapDispatchToProps)(ProductCard);
+export default connect(() => ({}), mapDispatchToProps)(ProductCard);

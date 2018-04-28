@@ -21,7 +21,7 @@ const App = ({
       <Header total={inventory.totalMoney} />
       <ProductGrid>
         {products.list.map(product => (
-          <ProductCard name={product} quantity={products.quantity[product]} />
+          <ProductCard key={product} name={product} quantity={products.quantity[product]} />
         ))}
       </ProductGrid>
 
