@@ -4,6 +4,8 @@ const actionTypes = {
   ADD_PRODUCT: 'ADD_PRODUCT',
   SELL_PRODUCT: 'SELL_PRODUCT',
   PRODUCE_PRODUCTS: 'PRODUCE_PRODUCTS',
+
+  OPEN_STORE: 'OPEN_STORE',
 };
 
 export default actionTypes;

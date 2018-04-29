@@ -16,6 +16,8 @@
   background-color: #fff;
   border-left: 3px solid var(--border-colour);
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   /* &:before {
     content: '';

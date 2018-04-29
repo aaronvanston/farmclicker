@@ -8,17 +8,23 @@ const calculatePrice = (price, qty, multiplier) => (
     ? price
     : (price * (multiplier ** qty)));
 
+const Divider = () => <span className={styles.divider}> | </span>;
+
 const ShopList = ({ handleClick, items, quantity }) => (
   <div className={styles.wrapper}>
+
     {items.map((item) => {
-      const price = calculatePrice(item.buyPrice, quantity[item.name] || 0, item.multiplier);
-      const formattedPrice = price.toLocaleString('en', { maximumFractionDigits: 2 });
+      const price =
+        Math.ceil(calculatePrice(item.buyPrice, quantity[item.name] || 0, item.multiplier));
+
+      const formattedPrice = price.toLocaleString('en');
       return (
-        <div key={item.name}>
-          <p>Name: {item.name}</p>
-          <p>Price: ${formattedPrice}</p>
-          <p>Quantity: {quantity[item.name] || 0}</p>
-          <hr />
+        <div key={item.name} className={styles.item}>
+          <span className={styles.name}>/{item.name.toLowerCase()}</span>
+          <Divider />
+          <span className={styles.cost}>${formattedPrice}</span>
+          <Divider />
+          <span className={styles.qty}>{quantity[item.name] || 0}</span>
         </div>
       );
     })}

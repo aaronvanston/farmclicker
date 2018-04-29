@@ -1,5 +1,37 @@
 @import "variables";
 
+.wrapper {
+  border-top: 3px solid var(--border-colour);
+  flex: 1;
+}
+
+.titleWrapper {
+  padding: 1rem;
+}
+
+.sub {
+  display: block;
+  line-height: 1;
+  font-size: 0.75rem;
+  padding-left: 0.25rem;
+}
+.title {
+  line-height: 1;
+  font-size: 1.5rem;
+  display: block;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+.noStore {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 4rem;
+}
 
 :global .react-tabs {
 

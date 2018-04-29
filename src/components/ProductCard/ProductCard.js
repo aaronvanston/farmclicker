@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addProduct, sellProduct } from '~/actions';
+import { addProduct, sellProduct, openStore } from '~/actions';
 
 import styles from './ProductCard.css';
 
 const ProductCard = ({
- name, quantity, handleAdd, handleSell 
+  name, quantity, handleAdd, handleSell, handleOpenStore,
 }) => (
   <div className={styles.card}>
-    <div className={styles.body} role="button" tabIndex="-1">
+    <div
+      className={styles.body}
+      role="button"
+      tabIndex="-1"
+      onClick={() => handleOpenStore(name)}
+    >
       <div className={styles.name}>[{name.toLowerCase()}]</div>
       <span className={styles.quantity}>{Math.floor(quantity)}</span>
     </div>
@@ -29,6 +34,7 @@ const ProductCard = ({
 const mapDispatchToProps = dispatch => ({
   handleAdd: (name) => { dispatch(addProduct(name)); },
   handleSell: (name) => { dispatch(sellProduct(name)); },
+  handleOpenStore: (name) => { dispatch(openStore(name)); },
 });
 
 export default connect(() => ({}), mapDispatchToProps)(ProductCard);
