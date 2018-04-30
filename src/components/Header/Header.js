@@ -6,7 +6,7 @@ import styles from './Header.css';
 
 const Header = () => (
   <header className={styles.header}>
-    <h1 className={styles.title}>~/Farmclicker</h1>
+    <h1 className={styles.title}>~/FarmClicker</h1>
     <span className={styles.version}>v{config.version}</span>
   </header>
 );

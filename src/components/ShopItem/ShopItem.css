@@ -1,0 +1,35 @@
+@import "variables";
+
+.item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border-colour);
+  min-height: 3.5rem;
+}
+
+.header {
+  display: flex;
+  font-size: 1rem;
+  padding-bottom: 0.25rem;
+}
+
+.name {
+  flex: 1;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 1;
+  padding-right: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.subSection {
+  font-size: 0.875rem;
+}
+
+.property {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.rate {
+  text-transform: capitalize;
+}

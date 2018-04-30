@@ -1,31 +1,31 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import styles from './ShopList.css';
+import ShopItem from '~/components/ShopItem/ShopItem';
 
 const calculatePrice = (price, qty, multiplier) => (
   (qty === 0)
     ? price
     : (price * (multiplier ** qty)));
 
-const Divider = () => <span className={styles.divider}> | </span>;
 
 const ShopList = ({ handleClick, items, quantity }) => (
-  <div className={styles.wrapper}>
-
+  <div>
     {items.map((item) => {
       const price =
         Math.ceil(calculatePrice(item.buyPrice, quantity[item.name] || 0, item.multiplier));
 
       const formattedPrice = price.toLocaleString('en');
       return (
-        <div key={item.name} className={styles.item}>
-          <span className={styles.name}>/{item.name.toLowerCase()}</span>
-          <Divider />
-          <span className={styles.cost}>${formattedPrice}</span>
-          <Divider />
-          <span className={styles.qty}>{quantity[item.name] || 0}</span>
-        </div>
+        <ShopItem
+          handleClick={handleClick}
+          key={item.name}
+          name={item.name}
+          price={formattedPrice}
+          rate={item.produces.rate}
+          qty={quantity[item.name] || 0}
+          product={item.produces.name}
+        />
       );
     })}
   </div>
