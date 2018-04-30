@@ -4,7 +4,7 @@ import { actionTypes } from '~/constants';
 import { productsCatalogue } from '~/catalogue';
 
 const initialState = {
-  totalMoney: 0,
+  totalMoney: 100,
 };
 
 const getProductValue = (productList, name) =>
@@ -16,6 +16,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         totalMoney: state.totalMoney + getProductValue(productsCatalogue, action.name),
+      };
+
+    case actionTypes.ADD_PRODUCER:
+      return {
+        ...state,
+        totalMoney: state.totalMoney - action.price,
       };
 
     default:

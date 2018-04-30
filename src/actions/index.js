@@ -11,5 +11,5 @@ export const openStore = name =>
   ({ type: actionTypes.OPEN_STORE, name });
 
 // Producer Actions
-export const addProducer = name =>
-  ({ type: actionTypes.ADD_PRODUCER, name });
+export const addProducer = (name, price) =>
+  ({ type: actionTypes.ADD_PRODUCER, name, price });

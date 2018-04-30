@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import ShopList from '~/components/ShopList/ShopList';
 import producersCatalogue from '~/catalogue/producers';
+import { addProducer } from '~/actions';
 
 import styles from './Shop.css';
 
@@ -12,7 +13,7 @@ const getProducerList = productType =>
     producer.produces.name === productType);
 
 
-const Shop = ({store}) => (
+const Shop = ({ store, handleAddProducer }) => (
   <div className={styles.wrapper}>
     {store.name ? (
       <Fragment >
@@ -28,10 +29,10 @@ const Shop = ({store}) => (
           </TabList>
 
           <TabPanel>
-            <ShopList handleClick={i => console.log(i)} items={getProducerList('EGGS')} />
+            <ShopList handleClick={handleAddProducer} items={getProducerList('EGGS')} />
           </TabPanel>
           <TabPanel>
-            <ShopList handleClick={i => console.log(i)} items={getProducerList('EGGS')} />
+            <ShopList handleClick={() => console.log('seller')} items={getProducerList('EGGS')} />
           </TabPanel>
         </Tabs>
       </Fragment>
@@ -45,5 +46,10 @@ const mapStateToProps = state => ({
   store: state.store,
 });
 
-export default connect(mapStateToProps)(Shop);
+const mapDispatchToProps = dispatch => ({
+  handleAddProducer: (name, price) => { dispatch(addProducer(name, price)); },
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Shop);
 

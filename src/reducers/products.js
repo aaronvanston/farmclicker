@@ -1,8 +1,8 @@
-import { actionTypes } from '~/constants';
+import { actionTypes, products as productsConstants } from '~/constants';
 
 export const initialState = {
-  list: [],
-  quantity: {},
+  list: [productsConstants.EGGS],
+  quantity: { [productsConstants.EGGS]: 0 },
 };
 
 const productsList = (state = initialState.list, action) => {

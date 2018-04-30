@@ -24,23 +24,11 @@ const App = ({
           <ProductCard key={product} name={product} quantity={products.quantity[product]} />
         ))}
       </ProductGrid>
-
-      <div>
-        Products:
-        <button onClick={() => handleAddProduct(constants.products.EGGS)}>Add Eggs</button>
-        <button onClick={() => handleAddProduct(constants.products.EGGS, 0.5)}>Add Egg 0.5</button>
-        <button
-          onClick={() => handleSellProduct(constants.products.EGGS)}
-          disabled={!(products.quantity[constants.products.EGGS] >= 1)}
-        >
-          Sell Eggs
-        </button>
-      </div>
+      
       <div>
         Producer:
-        <button onClick={() => handleAddProducer(constants.producers.CHICKEN)}>Add Chicken</button>
-        <button onClick={() => handleAddProducer(constants.producers.COW)}>Add Cow</button>
-        <pre>{JSON.stringify(producers, null, 2)}</pre>
+        <button onClick={() => handleAddProducer(constants.producers.CHICKEN, 1)}>Add Chicken</button>
+        <button onClick={() => handleAddProducer(constants.producers.COW, 1)}>Add Cow</button>
       </div>
     </main>
 
@@ -58,7 +46,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleAddProducer: (name) => { dispatch(addProducer(name)); },
+  handleAddProducer: (name, price) => { dispatch(addProducer(name, price)); },
   handleAddProduct: (name, amount) => { dispatch(addProduct(name, amount)); },
   handleSellProduct: (name) => { dispatch(sellProduct(name)); },
 });

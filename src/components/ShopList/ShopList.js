@@ -8,23 +8,29 @@ const calculatePrice = (price, qty, multiplier) => (
     ? price
     : (price * (multiplier ** qty)));
 
-
-const ShopList = ({ handleClick, items, quantity }) => (
+const ShopList = ({ handleClick, items, quantity, total }) => (
   <div>
     {items.map((item) => {
-      const price =
-        Math.ceil(calculatePrice(item.buyPrice, quantity[item.name] || 0, item.multiplier));
+      const price = Math.ceil(calculatePrice(
+        item.buyPrice,
+        quantity[item.name] || 0,
+        item.multiplier,
+      ));
 
+      const isDisabled = (totalIncome, itemPrice) => (!(itemPrice >= totalIncome));
       const formattedPrice = price.toLocaleString('en');
+
       return (
         <ShopItem
           handleClick={handleClick}
           key={item.name}
           name={item.name}
-          price={formattedPrice}
+          formattedPrice={formattedPrice}
+          price={price}
           rate={item.produces.rate}
           qty={quantity[item.name] || 0}
           product={item.produces.name}
+          disabled={isDisabled(price, total)}
         />
       );
     })}
@@ -32,7 +38,7 @@ const ShopList = ({ handleClick, items, quantity }) => (
 );
 
 const mapStateToProps = state => ({
-  total: state.inventory.TotalMoney,
+  total: state.inventory.totalMoney,
   quantity: state.producers.quantity || 0,
 });
 
