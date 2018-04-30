@@ -10,20 +10,36 @@ const producersCatalogue = [
       rate: 0.1,
     },
   }, {
-    name: producers.COW,
-    buyPrice: 10,
-    multiplier: 1.10,
+    name: producers.CHICKEN_COOP,
+    buyPrice: 100,
+    multiplier: 1.07,
     produces: {
       name: products.EGGS,
       rate: 1,
     },
   }, {
-    name: producers.COW,
-    buyPrice: 10,
-    multiplier: 1.10,
+    name: producers.CHICKEN_BARN,
+    buyPrice: 1000,
+    multiplier: 1.07,
     produces: {
-      name: products.MILK,
-      rate: 0.2,
+      name: products.EGGS,
+      rate: 5,
+    },
+  }, {
+    name: producers.FIELD_OF_WILD_CHICKENS,
+    buyPrice: 3000,
+    multiplier: 1.07,
+    produces: {
+      name: products.EGGS,
+      rate: 10,
+    },
+  }, {
+    name: producers.CHICKEN_RESORT,
+    buyPrice: 10000,
+    multiplier: 1.07,
+    produces: {
+      name: products.EGGS,
+      rate: 100,
     },
   },
 ];

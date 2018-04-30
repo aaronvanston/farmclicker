@@ -18,13 +18,4 @@
   position: relative;
   display: flex;
   flex-direction: column;
-
-  /* &:before {
-    content: '';
-    position: absolute;
-    left: -3px;
-    background-color: white;
-    width: 3px;
-    height: 61px;
-  } */
 }

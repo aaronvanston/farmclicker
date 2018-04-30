@@ -1,6 +1,9 @@
 const producers = {
   CHICKEN: 'CHICKEN',
-  COW: 'COW',
+  CHICKEN_COOP: 'CHICKEN_COOP',
+  CHICKEN_BARN: 'CHICKEN_BARN',
+  FIELD_OF_WILD_CHICKENS: 'FIELD_OF_WILD_CHICKENS',
+  CHICKEN_RESORT: 'CHICKEN_RESORT',
 };
 
 export default producers;

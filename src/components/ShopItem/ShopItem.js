@@ -9,7 +9,7 @@ const ShopItem = ({name, formattedPrice, price, rate, qty, product, handleClick,
     disabled={disabled}
   >
     <div className={styles.header}>
-      <div className={styles.name}>/{name.toLowerCase()}</div>
+      <div className={styles.name}>/{name.toLowerCase().split('_').join(' ')}</div>
       <div>${formattedPrice}</div>
     </div>
     <div className={styles.subSection}>
@@ -17,7 +17,10 @@ const ShopItem = ({name, formattedPrice, price, rate, qty, product, handleClick,
       <span> at </span>
       <span>
         <span className={styles.property}>{rate}</span>
-        <span className={styles.rate}>{` [${product}]/s`.toLowerCase()}</span>
+        <span>
+          <span className={styles.rate}>{` [${product}]`.toLowerCase()}</span>
+          /s
+        </span>
       </span>
     </div>
   </button>
