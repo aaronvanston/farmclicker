@@ -32,8 +32,8 @@ class GameBoard extends Component {
       (producers.quantity[item.name] >= 1)
     )).map(item => (
       {
-        name: item.produces.name,
-        amount: item.produces.rate * producers.quantity[item.name],
+        name: item.products.name,
+        amount: item.products.rate * producers.quantity[item.name],
       }
     ));
 

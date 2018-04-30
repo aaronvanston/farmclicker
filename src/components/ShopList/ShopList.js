@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import ShopItem from '~/components/ShopItem/ShopItem';
 
@@ -27,9 +26,9 @@ const ShopList = ({ handleClick, items, quantity, total }) => (
           name={item.name}
           formattedPrice={formattedPrice}
           price={price}
-          rate={item.produces.rate}
+          rate={item.products.rate}
           qty={quantity[item.name] || 0}
-          product={item.produces.name}
+          product={item.products.name}
           disabled={isDisabled(price, total)}
         />
       );
@@ -37,9 +36,4 @@ const ShopList = ({ handleClick, items, quantity, total }) => (
   </div>
 );
 
-const mapStateToProps = state => ({
-  total: state.inventory.totalMoney,
-  quantity: state.producers.quantity || 0,
-});
-
-export default connect(mapStateToProps)(ShopList);
+export default ShopList;

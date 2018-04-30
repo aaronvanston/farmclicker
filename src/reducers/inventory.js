@@ -18,6 +18,7 @@ export default (state = initialState, action) => {
         totalMoney: state.totalMoney + getProductValue(productsCatalogue, action.name),
       };
 
+    case actionTypes.ADD_SELLER:
     case actionTypes.ADD_PRODUCER:
       return {
         ...state,

@@ -5,7 +5,7 @@ const producersCatalogue = [
     name: producers.CHICKEN,
     buyPrice: 10,
     multiplier: 1.05,
-    produces: {
+    products: {
       name: products.EGGS,
       rate: 0.1,
     },
@@ -13,7 +13,7 @@ const producersCatalogue = [
     name: producers.CHICKEN_COOP,
     buyPrice: 100,
     multiplier: 1.07,
-    produces: {
+    products: {
       name: products.EGGS,
       rate: 1,
     },
@@ -21,7 +21,7 @@ const producersCatalogue = [
     name: producers.CHICKEN_BARN,
     buyPrice: 1000,
     multiplier: 1.07,
-    produces: {
+    products: {
       name: products.EGGS,
       rate: 5,
     },
@@ -29,7 +29,7 @@ const producersCatalogue = [
     name: producers.FIELD_OF_WILD_CHICKENS,
     buyPrice: 3000,
     multiplier: 1.07,
-    produces: {
+    products: {
       name: products.EGGS,
       rate: 10,
     },
@@ -37,7 +37,7 @@ const producersCatalogue = [
     name: producers.CHICKEN_RESORT,
     buyPrice: 10000,
     multiplier: 1.07,
-    produces: {
+    products: {
       name: products.EGGS,
       rate: 100,
     },

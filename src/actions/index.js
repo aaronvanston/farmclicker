@@ -13,3 +13,7 @@ export const openStore = name =>
 // Producer Actions
 export const addProducer = (name, price) =>
   ({ type: actionTypes.ADD_PRODUCER, name, price });
+
+// Seller Actions
+export const addSeller = (name, price) =>
+  ({ type: actionTypes.ADD_SELLER, name, price });

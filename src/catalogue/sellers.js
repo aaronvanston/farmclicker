@@ -5,7 +5,7 @@ const sellersCatalogue = [
     name: sellers.FOR_SALE_SIGN,
     buyPrice: 10,
     multiplier: 1.05,
-    sells: {
+    products: {
       name: products.EGGS,
       rate: 0.1,
     },
@@ -13,7 +13,7 @@ const sellersCatalogue = [
     name: sellers.NEWSPAPER_AD,
     buyPrice: 50,
     multiplier: 1.07,
-    sells: {
+    products: {
       name: products.EGGS,
       rate: 1,
     },
@@ -21,7 +21,7 @@ const sellersCatalogue = [
     name: sellers.CRAIGSLIST_AD,
     buyPrice: 75,
     multiplier: 1.05,
-    sells: {
+    products: {
       name: products.EGGS,
       rate: 5,
     },
@@ -29,7 +29,7 @@ const sellersCatalogue = [
     name: sellers.CHICKEN_DEALER,
     buyPrice: 100,
     multiplier: 1.07,
-    sells: {
+    products: {
       name: products.EGGS,
       rate: 7,
     },
@@ -37,7 +37,7 @@ const sellersCatalogue = [
     name: sellers.SHOPKEEPER,
     buyPrice: 200,
     multiplier: 1.07,
-    sells: {
+    products: {
       name: products.EGGS,
       rate: 10,
     },
