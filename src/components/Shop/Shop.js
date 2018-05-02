@@ -55,8 +55,8 @@ const Shop = ({ store, total, handleAddProducer, handleAddSeller, producerQuanti
 const mapStateToProps = state => ({
   store: state.store,
   total: state.inventory.totalMoney,
-  producerQuantity: state.producer ? state.producer.quantity : {},
-  sellerQuantity: state.seller ? state.seller.quantity : {},
+  producerQuantity: state.producers.quantity,
+  sellerQuantity: state.sellers.quantity,
 });
 
 const mapDispatchToProps = dispatch => ({
