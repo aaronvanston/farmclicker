@@ -3,8 +3,17 @@ import { connect } from 'react-redux';
 import { batchActions } from 'redux-batched-actions';
 
 import config from '~/config';
-import { addProduct } from '~/actions';
-import { producersCatalogue } from '~/catalogue';
+import { addProduct, sellProduct } from '~/actions';
+import { producersCatalogue, sellersCatalogue } from '~/catalogue';
+
+const refineStore = (store, catalogue) => (
+  catalogue.filter(item => (
+    (store.quantity[item.name] >= 1)
+  )).map(item => ({
+    name: item.products.name,
+    amount: item.products.rate * store.quantity[item.name],
+  }))
+);
 
 class GameBoard extends Component {
   constructor(props) {
@@ -26,20 +35,20 @@ class GameBoard extends Component {
 
   updateGameBoard() {
     console.log('tick');
-    const { producers, handleAddProducts } = this.props;
+    const {
+      producers,
+      handleAddProducts,
+      handleSell,
+      products,
+      sellers,
+      handleSellProducts,
+    } = this.props;
 
-    const produced = producersCatalogue.filter(item => (
-      (producers.quantity[item.name] >= 1)
-    )).map(item => (
-      {
-        name: item.products.name,
-        amount: item.products.rate * producers.quantity[item.name],
-      }
-    ));
+    const produced = refineStore(producers, producersCatalogue);
+    handleAddProducts(produced);
 
-    if (produced.length >= 1) {
-      handleAddProducts(produced);
-    }
+    const sold = refineStore(sellers, sellersCatalogue);
+    handleSellProducts(sold);
   }
 
   render() {
@@ -52,12 +61,17 @@ const mapDispatchToProps = dispatch => ({
     dispatch(batchActions(products.map(prod =>
       addProduct(prod.name, prod.amount))));
   },
+  handleSellProducts: (products) => {
+    dispatch(batchActions(products.map(prod =>
+      sellProduct(prod.name, prod.amount))));
+  },
 });
 
 
 const mapStateToProps = state => ({
   products: state.products,
   producers: state.producers,
+  sellers: state.sellers,
   inventory: state.inventory,
 });
 

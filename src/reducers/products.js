@@ -29,7 +29,7 @@ const productsQuantity = (state = initialState.quantity, action) => {
     case actionTypes.SELL_PRODUCT:
       return {
         ...state,
-        ...(state[action.name]) && { [action.name]: (state[action.name]) - 1 },
+        ...(state[action.name]) && { [action.name]: (state[action.name]) - action.amount },
       };
 
     default:

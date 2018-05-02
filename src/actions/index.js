@@ -4,8 +4,8 @@ import { actionTypes } from '~/constants';
 export const addProduct = (name, amount = 1) =>
   ({ type: actionTypes.ADD_PRODUCT, name, amount });
 
-export const sellProduct = name =>
-  ({ type: actionTypes.SELL_PRODUCT, name });
+export const sellProduct = (name, amount = 1) =>
+  ({ type: actionTypes.SELL_PRODUCT, name, amount });
 
 export const openStore = name =>
   ({ type: actionTypes.OPEN_STORE, name });

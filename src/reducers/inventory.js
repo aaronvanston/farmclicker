@@ -7,15 +7,18 @@ const initialState = {
   totalMoney: 100,
 };
 
-const getProductValue = (productList, name) =>
-  find(productList, { name }).sellPrice;
+// Find the selling price of the produce
+// Multiply it by the amount being sold
+const getProductValue = (productList, name, amount) =>
+  find(productList, { name }).sellPrice * amount;
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SELL_PRODUCT:
       return {
         ...state,
-        totalMoney: state.totalMoney + getProductValue(productsCatalogue, action.name),
+        totalMoney: state.totalMoney +
+          getProductValue(productsCatalogue, action.name, action.amount),
       };
 
     case actionTypes.ADD_SELLER:
