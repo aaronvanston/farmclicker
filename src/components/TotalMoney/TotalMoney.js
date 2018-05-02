@@ -7,7 +7,12 @@ import styles from './TotalMoney.css';
 
 const TotalMoney = ({ total }) => (
   <div className={styles.wrapper}>
-    <span className={styles.main}>${total.toLocaleString('en')}</span>
+    <span className={styles.main}>
+      ${total.toLocaleString('en', {
+         minimumFractionDigits: 2,
+         maximumFractionDigits: 2,
+        })}
+    </span>
     <span className={styles.sub}>[total]</span>
   </div>
 );
