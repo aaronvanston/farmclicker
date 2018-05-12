@@ -12,7 +12,7 @@ I wanted to build a complex version of the tradition idle clicker game. Involvin
 
 ## Build instructions
 
-To run farm clicker locally, clone the repo and run the following:
+To run farmclicker locally, clone the repo and run the following:
 
 ```bash
   yarn install # or npm install
