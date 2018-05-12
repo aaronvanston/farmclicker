@@ -4,7 +4,7 @@ Farmclicker is an idle clicker game based on gathering/selling resources. This s
 
 This project uses `react` + `redux` for the view and state management.
 
-## [Play FarmClicker](https://aaronvanston.github.io/farmclicker/)
+## [Play Farmclicker](https://aaronvanston.github.io/farmclicker/)
 
 ## Motivation around the game
 
