@@ -54,7 +54,7 @@ const Shop = ({ store, total, handleAddProducer, handleAddSeller, producerQuanti
         </Tabs>
       </Fragment>
     ) : (
-      <div className={styles.noStore}>Select a product from the catalogue shop for upgrades.</div>
+      <div className={styles.noStore}>Select a product from the catalogue to shop for upgrades.</div>
     )}
   </div>
 );
