@@ -10,6 +10,12 @@ export default (state = initialState, action) => {
         name: action.name,
       };
 
+    case actionTypes.CLOSE_STORE:
+      return {
+        ...state,
+        name: undefined,
+      };
+
     default:
       return state;
   }

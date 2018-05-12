@@ -1,13 +1,16 @@
 import React from 'react';
 
-import config from '~/config';
-
 import styles from './Header.css';
 
-const Header = () => (
+const Header = ({ total }) => (
   <header className={styles.header}>
     <h1 className={styles.title}>~/FarmClicker</h1>
-    <span className={styles.version}>v{config.version}</span>
+    <span className={styles.total}>
+      ${total.toLocaleString('en', {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+      })}
+    </span>
   </header>
 );
 

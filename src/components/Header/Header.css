@@ -1,3 +1,5 @@
+@import "variables";
+
 .header {
   height: 4rem;
   background-color: white;
@@ -10,14 +12,23 @@
   position: sticky;
   top: 0;
   justify-content: space-between;
+  z-index: var(--z-index-sticky);
 }
 
 .title {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
+  @media(--md) {
+    font-size: 1.5rem;
+  }
 }
 
-.version {
-  font-size: 0.75rem;
-  letter-spacing: 0px;
+.total {
+  line-height: 1;
+  padding-left: 1rem;
+  font-size: 1.25rem;
+
+  @media(--md) {
+    display: none;
+  }
 }

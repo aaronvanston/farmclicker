@@ -8,9 +8,9 @@
   background-color: white;
   border-bottom: 2px solid var(--border-colour);
   border-right: 2px solid var(--border-colour);
-  display: flex; 
+  display: flex;
   flex-direction: column;
-  
+
   @media (--sm) {
     margin-right: 1rem;
     width: auto;
@@ -24,20 +24,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  
-  &:hover {
-    background-color: rgba(0,0,0,0.05);
-    cursor: pointer;
-  }
-
-  &:active {
-    background-color: rgba(0,0,0,0.1);
-  }
-  
-  &:focus {
-    outline: none;
-    box-shadow: #9a9a9a 0 2px;
-  }
 }
 
 .name {
@@ -54,9 +40,9 @@
   display: flex;
 }
 
-.actionBtn {
+.btnStyles {
   flex: 1;
-  widht: 100%;
+  width: 100%;
   height: 3rem;
   font-size: 1rem;
   background: none;
@@ -64,9 +50,6 @@
   border-top: 1px solid var(--border-colour);
   cursor: pointer;
 
-  &:first-of-type {
-    border-right: 1px solid var(--border-colour);
-  }
 
   &:disabled {
     cursor: not-allowed;
@@ -81,9 +64,24 @@
   &:active {
     background-color: rgba(0,0,0,0.1);
   }
-  
+
   &:focus {
     outline: none;
     box-shadow: #9a9a9a 0 2px;
   }
+}
+
+.actionBtn {
+  composes: btnStyles;
+
+  &:first-of-type {
+    border-right: 1px solid var(--border-colour);
+  }
+}
+
+
+.headerBtn {
+  composes: btnStyles;
+  max-height: 2.5rem;
+  border-bottom: 1px solid var(--border-colour);
 }

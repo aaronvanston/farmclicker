@@ -5,7 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import ShopList from '~/components/ShopList/ShopList';
 import producersCatalogue from '~/catalogue/producers';
 import sellersCatalogue from '~/catalogue/sellers';
-import { addProducer, addSeller } from '~/actions';
+import { addProducer, addSeller, closeStore } from '~/actions';
 
 import styles from './Shop.css';
 
@@ -13,10 +13,17 @@ const getShopList = (catalogue, productType) =>
   catalogue.filter(item =>
     item.products.name === productType);
 
-const Shop = ({ store, total, handleAddProducer, handleAddSeller, producerQuantity, sellerQuantity }) => (
+const Shop = ({ store, total, handleAddProducer, handleAddSeller, producerQuantity, sellerQuantity, handleCloseStore }) => (
   <div className={styles.wrapper}>
     {store.name ? (
       <Fragment >
+        <button
+          className={styles.closeBtn}
+          onClick={() => handleCloseStore()}
+        >
+          CLOSE
+        </button>
+
         <div className={styles.titleWrapper}>
           <span className={styles.sub}>STORE</span>
           <span className={styles.title}>[{store.name.toLowerCase()}]</span>
@@ -47,7 +54,7 @@ const Shop = ({ store, total, handleAddProducer, handleAddSeller, producerQuanti
         </Tabs>
       </Fragment>
     ) : (
-      <div className={styles.noStore}>Select a product on the left to shop for upgrades.</div>
+      <div className={styles.noStore}>Select a product from the catalogue shop for upgrades.</div>
     )}
   </div>
 );
@@ -62,6 +69,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleAddProducer: (name, price) => { dispatch(addProducer(name, price)); },
   handleAddSeller: (name, price) => { dispatch(addSeller(name, price)); },
+  handleCloseStore: () => { dispatch(closeStore()); },
 });
 
 

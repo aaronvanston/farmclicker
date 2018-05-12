@@ -1,8 +1,11 @@
 @import "variables";
 
 .wrapper {
-  border-top: 3px solid var(--border-colour);
   flex: 1;
+
+  @media(--md) {
+    border-top: 3px solid var(--border-colour);
+  }
 }
 
 .titleWrapper {
@@ -12,7 +15,7 @@
 .sub {
   display: block;
   line-height: 1;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   padding-left: 0.25rem;
 }
 .title {
@@ -22,6 +25,7 @@
   font-weight: bold;
   text-transform: capitalize;
 }
+
 .noStore {
   height: 100%;
   display: flex;
@@ -31,6 +35,33 @@
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 4rem;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  background: none;
+  border: 1px solid #000;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(0,0,0,0.075);
+  }
+
+  &:active {
+    background-color: rgba(0,0,0,0.1);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: #9a9a9a 0 2px;
+  }
+
+  @media(--md) {
+    display: none;
+  }
 }
 
 :global .react-tabs {
@@ -71,7 +102,7 @@
   &:active {
     background-color: rgba(0,0,0,0.1);
   }
-  
+
   &:focus {
     outline: none;
     box-shadow: #9a9a9a 0 -1px;

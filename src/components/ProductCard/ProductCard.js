@@ -9,12 +9,13 @@ const ProductCard = ({
   name, quantity, handleAdd, handleSell, handleOpenStore,
 }) => (
   <div className={styles.card}>
-    <div
-      className={styles.body}
-      role="button"
-      tabIndex="-1"
+    <button
+      className={styles.headerBtn}
       onClick={() => handleOpenStore(name)}
     >
+      Store
+    </button>
+    <div className={styles.body} >
       <div className={styles.name}>[{name.toLowerCase()}]</div>
       <span className={styles.quantity}>{Math.floor(quantity)}</span>
     </div>

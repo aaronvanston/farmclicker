@@ -7,8 +7,12 @@ export const addProduct = (name, amount = 1) =>
 export const sellProduct = (name, amount = 1) =>
   ({ type: actionTypes.SELL_PRODUCT, name, amount });
 
+// Store Actions
 export const openStore = name =>
   ({ type: actionTypes.OPEN_STORE, name });
+
+export const closeStore = () =>
+  ({ type: actionTypes.CLOSE_STORE });
 
 // Producer Actions
 export const addProducer = (name, price) =>
