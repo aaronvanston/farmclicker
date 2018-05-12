@@ -4,7 +4,7 @@ import { actionTypes } from '~/constants';
 import { productsCatalogue } from '~/catalogue';
 
 const initialState = {
-  totalMoney: 1213,
+  totalMoney: 0,
 };
 
 // Find the selling price of the produce

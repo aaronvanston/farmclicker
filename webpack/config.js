@@ -22,7 +22,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, '..', 'dist'),
     filename: PRODUCTION ? 'bundle-[hash].js' : 'bundle.js',
-    publicPath: PRODUCTION ? '/' : `${ASSET_HOST}/`,
+    publicPath: PRODUCTION ? './' : `${ASSET_HOST}/`,
   },
 
   plugins: PRODUCTION ? [
