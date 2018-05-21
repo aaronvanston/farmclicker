@@ -65,7 +65,7 @@ class GameBoard extends Component {
 
     const sold = mergeActions(refineStore(sellers, sellersCatalogue));
     const maxSell = sold.map((item) => {
-      const availableProducts = Math.floor(products.quantity[item.name]);
+      const availableProducts = products.quantity[item.name].qty;
       const productAmount = item.amount;
 
       // if amount requested to sell is greater than amount owned

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import ShopList from '~/components/ShopList/ShopList';
+import ShopHeader from '~/components/ShopHeader/ShopHeader';
 import producersCatalogue from '~/catalogue/producers';
 import sellersCatalogue from '~/catalogue/sellers';
 import { addProducer, addSeller, closeStore } from '~/actions';
@@ -24,10 +25,7 @@ const Shop = ({ store, total, handleAddProducer, handleAddSeller, producerQuanti
           CLOSE
         </button>
 
-        <div className={styles.titleWrapper}>
-          <span className={styles.sub}>STORE</span>
-          <span className={styles.title}>[{store.name.toLowerCase()}]</span>
-        </div>
+        <ShopHeader />
 
         <Tabs>
           <TabList>

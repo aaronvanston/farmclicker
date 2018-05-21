@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         totalMoney: state.totalMoney +
-          getProductValue(productsCatalogue, action.name, action.amount),
+          getProductValue(productsCatalogue, action.name, ((action.amount >= 0) ? action.amount : 1)),
       };
 
     case actionTypes.ADD_SELLER:

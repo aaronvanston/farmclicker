@@ -24,7 +24,7 @@ const App = ({ products, inventory, store }) => (
           <ProductCard
             key={product}
             name={product}
-            quantity={products.quantity[product]}
+            quantity={products.quantity[product].qty}
           />
         ))}
       </ProductGrid>

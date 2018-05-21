@@ -1,0 +1,27 @@
+.wrapper {
+  padding: 1rem;
+}
+
+.sub {
+  display: block;
+  line-height: 1;
+  font-size: 0.875rem;
+}
+
+.title {
+  line-height: 1;
+  font-size: 1.5rem;
+  display: block;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-left: -0.25rem;
+}
+
+.detailsWrapper {
+  padding-top: 0.5rem;
+}
+
+.detailsItem {
+  line-height: 1.25;
+  font-size: 0.875rem;
+}

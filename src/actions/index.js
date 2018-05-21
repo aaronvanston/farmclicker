@@ -1,10 +1,10 @@
 import { actionTypes } from '~/constants';
 
 // Product Actions
-export const addProduct = (name, amount = 1) =>
+export const addProduct = (name, amount) =>
   ({ type: actionTypes.ADD_PRODUCT, name, amount });
 
-export const sellProduct = (name, amount = 1) =>
+export const sellProduct = (name, amount) =>
   ({ type: actionTypes.SELL_PRODUCT, name, amount });
 
 // Store Actions
