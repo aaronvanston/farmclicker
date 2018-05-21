@@ -4,7 +4,7 @@ import styles from './ShopItem.css';
 
 const ShopItem = ({name, formattedPrice, price, rate, qty, product, handleClick, disabled }) => (
   <button
-    className={styles.item}
+    className={(qty >= 1) ? styles.purchasedItem : styles.item }
     onClick={() => handleClick(name, price)}
     disabled={disabled}
   >

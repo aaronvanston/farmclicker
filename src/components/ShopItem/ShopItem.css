@@ -24,10 +24,18 @@
   &:active {
     background-color: rgba(0,0,0,0.1);
   }
-  
+
   &:focus {
     outline: none;
     box-shadow: #9a9a9a 0 2px;
+  }
+}
+
+.purchasedItem {
+  composes: item;
+
+  &:disabled {
+    text-decoration: none;
   }
 }
 
